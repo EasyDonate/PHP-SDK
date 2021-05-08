@@ -9,8 +9,10 @@
 		"php"
 	],
     "require": {
-    	"php": ">=7.0",
-        "ext-curl": "*",
+    	"php": ">=7.0"
+    },
+    "require-dev": {
+    	"ext-curl": "*",
         "ext-json": "*"
     },
     "autoload": {
