@@ -1,0 +1,22 @@
+{
+    "name": "easydonate/php-sdk",
+    "description": "Official PHP EasyDonate SDK",
+    "minimum-stability": "dev",
+    "license": "MIT",
+    "keywords": [
+		"minecraft",
+		"easydonate",
+		"sdk",
+		"php"
+	],
+    "require": {
+    	"php": ">=7.0",
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "autoload": {
+		"psr-4": {
+            "EasyDonate\\": "src"
+        }
+	}
+}
