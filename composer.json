@@ -1,7 +1,6 @@
 {
     "name": "easydonate/php-sdk",
     "description": "Official PHP EasyDonate SDK",
-    "minimum-stability": "dev",
     "license": "MIT",
     "keywords": [
 		"minecraft",
