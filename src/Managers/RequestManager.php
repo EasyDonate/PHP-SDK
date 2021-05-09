@@ -29,7 +29,7 @@ class RequestManager
         $request = json_decode(curl_exec($curl));
         curl_close($curl);
 
-        if (!is_object($request) || !isset($request->success) || !isset($request->response)) {
+        if (!is_object($request) || !isset($request->success, $request->response)) {
             return false;
         }
 
