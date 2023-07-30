@@ -9,7 +9,7 @@ class Sdk
 {
 	protected $requestManager;
 
-	public function __construct(string $key, int $version = 2)
+	public function __construct(string $key, int $version = 3)
 	{
 		$this->requestManager = new RequestManager($key, $version);
 	}

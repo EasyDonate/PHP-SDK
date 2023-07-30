@@ -9,6 +9,9 @@ class PaymentManager
     protected $customer;
     protected $serverId;
     protected $products;
+    protected $email;
+    protected $coupon;
+    protected $url;
 
     protected $payment;
 
@@ -35,6 +38,21 @@ class PaymentManager
         return $this;
     }
 
+    public function setEmail(string $email) {
+        $this->email = $email;
+        return $this;
+    }
+
+    public function setCoupon(string $coupon) {
+        $this->coupon = $coupon;
+        return $this;
+    }
+
+    public function setSuccessUrl (string $url) {
+        $this->url = $url;
+        return $this;
+    }
+
     public function create(bool $redirect = false)
     {
         if (!$this->customer || !$this->serverId || !$this->products) {
@@ -44,7 +62,10 @@ class PaymentManager
         $query = http_build_query([
             'customer' => $this->customer,
             'server_id' => $this->serverId,
-            'products' => $this->products
+            'products' => $this->products,
+            'email' => $this->email,
+            'coupon' => $this->coupon,
+            'success_url' => $this->url
         ]);
 
         $response = $this->response = $this->requestManager->get("payment/create?{$query}");
@@ -55,6 +76,9 @@ class PaymentManager
     private function redirect()
     {
         if ($this->response && isset($this->response->url)) {
+            if (class_exists('\Illuminate\Http\RedirectResponse', false)) {
+                return redirect()->away($this->response->url);
+            }
             header("Location: {$this->response->url}");
         }
 

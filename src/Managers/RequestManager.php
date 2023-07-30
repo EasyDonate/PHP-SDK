@@ -5,10 +5,12 @@ use EasyDonate\Exceptions\BadRequestCallException;
 class RequestManager
 {
     protected $url;
+    protected $key;
 
     public function __construct(string $key, string $version)
     {
-        $this->url = "https://easydonate.ru/api/v{$version}/shop/{$key}";
+        $this->url = "https://easydonate.ru/api/v{$version}/shop";
+        $this->key = $key;
     }
 
     public function get(string $urn, array $params = [])
@@ -21,6 +23,7 @@ class RequestManager
         $curl = curl_init("{$this->url}/{$urn}{$query}");
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_HTTPHEADER, [
+            'Shop-key: ' . $this->key,
             'Accept: application/json',
             'Content-Type: application/json',
             'User-Agent: EasyDonate/PHP-SDK'
