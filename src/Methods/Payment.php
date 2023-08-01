@@ -1,6 +1,6 @@
-<?php namespace EasyDonate\Methods;
+<?php namespace L4dno\Methods;
 
-use EasyDonate\Managers\RequestManager;
+use L4dno\Managers\RequestManager;
 
 class Payment implements MethodInterface
 {

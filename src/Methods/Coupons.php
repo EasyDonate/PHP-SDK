@@ -1,8 +1,8 @@
 <?php
 
-namespace EasyDonate\Methods;
+namespace L4dno\Methods;
 
-use EasyDonate\Managers\RequestManager;
+use L4dno\Managers\RequestManager;
 
 class Coupons implements MethodInterface
 {

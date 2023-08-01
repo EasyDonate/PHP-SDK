@@ -1,4 +1,5 @@
-<?php namespace EasyDonate\Managers;
+<?php
+namespace EasyDonate\Managers;
 
 use EasyDonate\Exceptions\BadRequestCallException;
 

@@ -1,9 +1,9 @@
-<?php namespace EasyDonate;
+<?php namespace L4dno;
 
-use EasyDonate\Managers\RequestManager;
-use EasyDonate\Managers\PaymentManager;
-use EasyDonate\Exceptions\BadMethodCallException;
-use EasyDonate\Exceptions\BadMethodSyntaxException;
+use L4dno\Managers\RequestManager;
+use L4dno\Managers\PaymentManager;
+use L4dno\Exceptions\BadMethodCallException;
+use L4dno\Exceptions\BadMethodSyntaxException;
 
 class Sdk
 {
@@ -20,7 +20,7 @@ class Sdk
 			throw new BadMethodSyntaxException("Method \"{$method}\" has incorrect syntax");
 		}
 
-		$class = "EasyDonate\Methods\\{$matches[1]}";
+		$class = "L4dno\Methods\\{$matches[1]}";
 		if (!class_exists($class)) {
 			throw new BadMethodCallException("Method \"{$method}\" does not exists");
 		}

@@ -1,4 +1,5 @@
-<?php namespace EasyDonate\Exceptions;
+<?php
+namespace L4dno\Exceptions;
 
 use Exception;
 

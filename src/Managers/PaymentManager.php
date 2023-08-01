@@ -1,6 +1,6 @@
-<?php namespace EasyDonate\Managers;
+<?php namespace L4dno\Managers;
 
-use EasyDonate\Exceptions\BadParamsException;
+use L4dno\Exceptions\BadParamsException;
 
 class PaymentManager
 {
@@ -39,12 +39,12 @@ class PaymentManager
     }
 
     public function setEmail(string $email) {
-        $this->email = $email;
+        $this->email = $email ?? null;
         return $this;
     }
 
     public function setCoupon(string $coupon) {
-        $this->coupon = $coupon;
+        $this->coupon = $coupon ?? null;
         return $this;
     }
 
@@ -64,7 +64,7 @@ class PaymentManager
             'server_id' => $this->serverId,
             'products' => $this->products,
             'email' => $this->email,
-            'coupon' => $this->coupon,
+            'coupon' => $this->coupon ?? '',
             'success_url' => $this->url
         ]);
 

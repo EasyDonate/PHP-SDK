@@ -9,7 +9,7 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$sdk = new EasyDonate\Sdk('12aeb1f345h5gdrf5fj6ds869h33f8fe');
+$sdk = new L4dno\Sdk('12aeb1f345h5gdrf5fj6ds869h33f8fe');
 $payment = $sdk->payment()
                ->setCustomer('DontFollow')
                ->setServerId(1435)
