@@ -1,6 +1,6 @@
 {
-    "name": "easydonate/php-sdk",
-    "description": "Official PHP EasyDonate SDK",
+    "name": "l4dno/easydonate-php-sdk",
+    "description": "Fork of PHP EasyDonate SDK",
     "license": "MIT",
     "keywords": [
 		"minecraft",
