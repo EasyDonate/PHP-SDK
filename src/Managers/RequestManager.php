@@ -1,7 +1,7 @@
 <?php
-namespace EasyDonate\Managers;
+namespace L4dno\Managers;
 
-use EasyDonate\Exceptions\BadRequestCallException;
+use L4dno\Exceptions\BadRequestCallException;
 
 class RequestManager
 {
